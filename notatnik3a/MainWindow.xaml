@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Menu>
+        <Menu x:Name="menu">
             <MenuItem Header="Plik">
                 <MenuItem Header="Nowy" Click="NewFile_Click"/>
                 <MenuItem Header="Otwórz" Click="Open_click"/>
@@ -25,24 +25,24 @@
                 <MenuItem Header="Przywróć" Command="ApplicationCommands.Redo"/>
                 <Separator/>
 
-                <MenuItem Header="Wytnij"/>
-                <MenuItem Header="Kopiuj"/>
-                <MenuItem Header="Wklej"/>
+                <MenuItem Header="Wytnij" Command="ApplicationCommands.Cut"/>
+                <MenuItem Header="Kopiuj" Command="ApplicationCommands.Copy"/>
+                <MenuItem Header="Wklej" Command="ApplicationCommands.Paste"/>
 
             </MenuItem>
             <MenuItem Header="Format">
                 <MenuItem Header="Rozmiar">
-                    <MenuItem Header="Zwiększ"/>
-                    <MenuItem Header="Zmiejsz"/>
+                    <MenuItem Header="Zwiększ" Click="SizeLarger_click"/>
+                    <MenuItem Header="Zmiejsz" Click="SizeSmaller_click"/>
                     
                 </MenuItem>
                 <MenuItem Header="Motyw">
-                    <MenuItem Header="Ciemny"/>
-                    <MenuItem Header="Jasny"/>
+                    <MenuItem Header="Ciemny" Click="CiemnyMotyw_Click"/>
+                    <MenuItem Header="Jasny" Click="JasnyMotyw_Click"/>
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <ToolBar Grid.Row="1">
+        <ToolBar Grid.Row="1" x:Name="toolbar">
             
         </ToolBar>
         <TextBox Grid.Row="2" 

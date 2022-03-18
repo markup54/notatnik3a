@@ -22,6 +22,7 @@ namespace notatnik3a
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int TextSize = 15;
         private string Path;
         private string SaveText;
         private bool xChanged=false;
@@ -29,6 +30,7 @@ namespace notatnik3a
         {
             Path = null;
             InitializeComponent();
+            tekst.FontSize = TextSize;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -111,6 +113,44 @@ namespace notatnik3a
                         break;
                 }
             }
+        }
+
+        private void SizeLarger_click(object sender, RoutedEventArgs e)
+        {
+            TextSize += 5;
+            tekst.FontSize = TextSize;
+        }
+     
+        private void SizeSmaller_click(object sender, RoutedEventArgs e)
+        {
+            if(TextSize<6)
+            {
+                return;
+            }
+            TextSize -= 5;
+            tekst.FontSize = TextSize;
+        }
+
+        private void CiemnyMotyw_Click(object sender, RoutedEventArgs e)
+        {
+            tekst.Background = System.Windows.Media.Brushes.Black;
+            toolbar.Background = System.Windows.Media.Brushes.Black;
+            menu.Background = System.Windows.Media.Brushes.Black;
+
+            tekst.Foreground = System.Windows.Media.Brushes.White;
+            toolbar.Foreground = System.Windows.Media.Brushes.White;
+            menu.Foreground = System.Windows.Media.Brushes.White;
+        }
+
+        private void JasnyMotyw_Click(object sender, RoutedEventArgs e)
+        {
+            tekst.Background = System.Windows.Media.Brushes.White;
+            toolbar.Background = System.Windows.Media.Brushes.White;
+            menu.Background = System.Windows.Media.Brushes.White;
+
+            tekst.Foreground = System.Windows.Media.Brushes.Black;
+            toolbar.Foreground = System.Windows.Media.Brushes.Black;
+            menu.Foreground = System.Windows.Media.Brushes.Black;
         }
     }
 }
