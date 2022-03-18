@@ -1,0 +1,52 @@
+﻿<Window x:Class="notatnik3a.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:notatnik3a"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Plik">
+                <MenuItem Header="Nowy" Click="NewFile_Click"/>
+                <MenuItem Header="Otwórz" Click="Open_click"/>
+                <MenuItem Header="Zapisz" Click="Save_Click"/>
+                <MenuItem Header="Zapisz jako" Click="Save_As_Click"/>
+                <MenuItem Header="Zamknij" Click="Close_Click"/>
+            </MenuItem>
+            <MenuItem Header="Edycja">
+                <MenuItem Header="Cofnij" Command="ApplicationCommands.Undo"/>
+                <MenuItem Header="Przywróć" Command="ApplicationCommands.Redo"/>
+                <Separator/>
+
+                <MenuItem Header="Wytnij"/>
+                <MenuItem Header="Kopiuj"/>
+                <MenuItem Header="Wklej"/>
+
+            </MenuItem>
+            <MenuItem Header="Format">
+                <MenuItem Header="Rozmiar">
+                    <MenuItem Header="Zwiększ"/>
+                    <MenuItem Header="Zmiejsz"/>
+                    
+                </MenuItem>
+                <MenuItem Header="Motyw">
+                    <MenuItem Header="Ciemny"/>
+                    <MenuItem Header="Jasny"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBar Grid.Row="1">
+            
+        </ToolBar>
+        <TextBox Grid.Row="2" 
+                 x:Name="tekst"
+                 TextChanged="Changed"/>
+    </Grid>
+</Window>
